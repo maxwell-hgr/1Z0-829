@@ -1,0 +1,2 @@
+JAVA_VERSION="21.0.6"
+MODULES="java.base zoo.animal.feeding zoo.animal.care zoo.animal.talks"

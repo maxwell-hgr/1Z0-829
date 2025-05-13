@@ -1,0 +1,131 @@
+Capítulo 1 
+
+Building Blocks 
+
+ 
+
+Assinatura de classe, método e atributos - 
+
+	public class Animal { 
+
+		public String name; 
+
+		public String getName(){ 
+
+			return name; 
+
+		} 
+
+		public void setName(String newName){ 
+
+			name = newName; 
+
+		} 
+
+	} 
+
+ 
+
+Comments 
+
+	// single-line comment 
+
+	/* Multiple 
+
+	* line  
+
+	   comment -> o asterisco não é obrigatório (apesar de ser recomendado) 
+
+	*/ 
+
+ 
+
+Top-level type 
+
+	public class Animal {} -> top-level type 
+
+	class Animal2 {} -> top-level type 
+
+	public class Animal2 {} -> não compila em um arquivo com nome Animal.java 
+
+ 
+
+Main method 
+
+	public class Zoo { 
+
+		public static void main(String[] args){ 
+
+		System.out.println(“Hello World”); 
+
+	} 
+
+} 
+
+ 
+
+Packages e Imports 
+
+	import java.util.Random; // import diz para o java onde encontrar a classe Random 
+
+	import com.maxwellhgr.* // importa minha biblioteca completa (Wildcards) 
+
+	import a.b.c // anotação válida (apesar de estranha) 
+
+ 
+
+ 
+
+	* umas das razões para uso de packages é que o nome da classe não precisa ser único por toda a aplicação 
+
+	Quando preciso usar duas classes com o mesmo nome de pacotes diferentes 
+
+		public class Conflicts { 
+
+			java.util.Date date; 
+
+			java.sql.Date sqlDate; 
+
+		} 
+
+ 
+	package packagea; 
+
+	public class ClassA{} 
+
+ 
+
+	package packageb; 
+
+	import packagea.ClassA;  
+
+	public class ClassB{ 
+
+		public static void main(String... args){ 
+
+			ClassA a; 
+
+			System.out.println("Got it"); 
+
+		} 
+
+	}
+	
+	Compilando e rodando programa dentro de pacote
+		javac packageName/Classname packageName2/ClassName2
+		java packageName/ClassName
+	
+	Rodando programa que depende de outros .jar
+		java -cp ".:/tmp/someOtherLocation:/tmp/myJar.jar" myPackage.MyClass -> procura o jar em someOtherLocation
+	
+	Criando um .jar
+		jar -cvf ClassName.jar ClassName.class
+		
+
+Objects
+	Park p = new Park();
+
+
+
+
+ 
